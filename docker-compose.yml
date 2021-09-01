@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  postgresdb:
+    image: postgres:13.2
+    ports:
+      - "127.0.0.1:5430:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: main
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
